@@ -91,6 +91,8 @@ spec:
 ## Задание 2. Создать Ingress и обеспечить доступ к приложениям снаружи кластера
 ### 1. Включение Ingress-controller в MicroK8S.
 ![image](https://github.com/user-attachments/assets/52fcf2a1-416c-41c7-94b4-30193df016c1)
+### 2. Манифетс Ingress
+### 3. Проверка связи
 
 
 
