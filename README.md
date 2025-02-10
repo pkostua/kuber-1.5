@@ -92,7 +92,40 @@ spec:
 ### 1. Включение Ingress-controller в MicroK8S.
 ![image](https://github.com/user-attachments/assets/52fcf2a1-416c-41c7-94b4-30193df016c1)
 ### 2. Манифетс Ingress
+```
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-main
+  labels:
+    name: ingress-microk8s
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: "nginx"
+  rules:
+    - host: microk8s.mylocalserver.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-front
+                port:
+                  name: nginx
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: svc-back
+                port:
+                  name: multitool
+```
 ### 3. Проверка связи
+![image](https://github.com/user-attachments/assets/247467e9-ce3d-42cc-b2f3-8316e115c7b1)
+
 
 
 
